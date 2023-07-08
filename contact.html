@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <!-- my css -->
     <style></style>
-    <title>Web kita</title>
+    <title>well coffe | coffee shop</title>
   </head>
   <body>
     <div class="header">
@@ -57,27 +57,34 @@
           <h4>wellcoffe@gmail.com</h4>
         </div>
         <div class="col-md-6">
-          <form>
+          <form class="form needs-validation" novalidate>
+            <!-- <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" placeholder="Email or Phone" id="username" required />
+              <div class="invalid-feedback">Username is required.</div> -->
             <div class="mb-3">
               <label for="nama" class="form-label">Your Name (required)</label>
-              <input type="text" class="form-control" id="nama" />
+              <input type="text" class="form-control" id="nama" required />
+              <div class="invalid-feedback">Username is required.</div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Your Email (required)</label>
-              <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" />
+              <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" required />
+              <div class="invalid-feedback">Email is required.</div>
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-              <label for="nama" class="form-label">Subjek</label>
-              <input type="text" class="form-control" id="nama" />
+              <label for="subject" class="form-label">Subjek</label>
+              <input type="text" class="form-control" id="subject" required />
+              <div class="invalid-feedback">Subject is required.</div>
             </div>
             <div class="mb-3">
               <label for="floatingTextarea">Your Message</label>
-              <textarea class="form-control" id="floatingTextarea"></textarea>
+              <textarea class="form-control" id="floatingTextarea" required></textarea>
+              <div class="invalid-feedback">Message is required.</div>
             </div>
-            <div class="btn btn-outline-primary">
-              <a style="text-decoration: none" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=kholis0216@gmail.com">Send</a>
-            </div>
+            <button class="btn btn-outline-warning" style="text-decoration: none; color: rgb(255, 136, 0)" type="submit">Send</button>
+            <!-- <button class="btn" type="submit">Sign in</button> -->
+            <!-- <a  href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=kholis0216@gmail.com">Send</a> -->
           </form>
         </div>
       </div>
@@ -105,5 +112,30 @@
     </footer>
     <!-- akhir footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        'use strict';
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation');
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            'submit',
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
